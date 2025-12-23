@@ -1,0 +1,306 @@
+@charset "utf-8";
+/* コメントの書き方　*/
+/* 閉じないと赤波つく。赤波がついているところまでが設定がかかっているということ　*/
+/* CSSは後書きのほうが湯煎される*/
+
+.site_header {
+    background-color: #fff;
+    /* ヘッダーの背景色を白に設定 */
+    padding: 0px 0px;
+    /* 上下に20px、左右に40pxの内側余白を設定 */
+    border-bottom: 1px solid #ccc;
+    /* 下部に1pxの薄いグレーの実線を引いて区切り線を作成 */
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+.header-inner {
+    display: flex;
+    /* 子要素を横並びにするフレックスボックスレイアウトを適用 */
+    justify-content: space-between;
+    /* 子要素同士の間にスペースを均等に配置（両端寄せ） */
+    align-items: center;
+    /* 子要素を縦方向の中央に揃える */
+    max-width: 1100px;
+    /* コンテナの最大幅を1200pxに制限 */
+    margin: 0 auto;
+    /* 左右のマージンを自動にして中央寄せにする */
+}
+
+
+.logo-area .logo {
+    height: 100px;
+    /* ロゴの高さを50ピクセルに設定 */
+    width: 100%;
+    /* ロゴの幅を親要素の2.5倍に設定（拡大表示） */
+    display: block;
+    /* ブロック要素化して左寄せの制御をしやすく */
+}
+
+.logo-area {
+    margin-right: auto;
+    /* ← フレックス内でロゴを左端に寄せる */
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    /* 画像本来の横幅を保持 */
+    display: block;
+    /* ブロック化して中央寄せを防止 */
+}
+
+
+
+.site_nav ul {
+    display: flex;
+    /* ナビゲーションリストを横並びに表示 */
+    gap: 30px;
+    /* 各リスト項目（li）の間に30pxの隙間を設定 */
+    list-style: none;
+    /* リストマーカー（●や番号）を非表示にする */
+    margin: 0;
+    /* 外側の余白をリセット */
+    padding: 0;
+    /* 内側の余白をリセット */
+    align-items: center;
+}
+
+.site_nav a {
+    text-decoration: none;
+    /* リンクの下線を消す */
+    color: #000;
+    /* テキストの色を黒に設定 */
+    font-weight: bold;
+    /* 文字を太字にする */
+    font-size: 22px;
+    /* 文字の大きさを16ピクセルに指定 */
+    align-items: center;
+    /* flexコンテナ内のアイテムの垂直方向の中央揃え（ただしaタグがflexコンテナでない場合は効果なし） */
+}
+
+
+.mail-icon {
+    width: 40px;
+    /* 横幅を24ピクセルに指定 */
+    height: 40px;
+    /* 高さを24ピクセルに指定 */
+    vertical-align: middle;
+    /* インライン要素を垂直方向に中央揃え */
+
+}
+
+.company-intro {
+    background: url("../IMG/orangeback.jpg") no-repeat center top;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    padding: 200px 20px;
+
+}
+
+.wrapper {
+    margin: 0 auto;
+    /* マージンとは要素の外側　*/
+}
+
+
+/* main */
+
+.main {
+    padding-top: 124px;
+}
+.business_wrapper {
+    padding-top: 100px;
+    display: grid;
+    justify-content: center;
+}
+
+.title-ses {
+    margin: 0 auto;
+    font-size: 36px;
+    /* 好きな大きさに */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    /* タイトルのに上に余白も追加 */
+}
+
+.title_txt {
+    display: inline-block;
+
+}
+
+.title-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;/* 余白はお好みで */
+}
+
+.title-text {
+    font-size: 20px;
+    line-height: 1.8;
+    padding-bottom: 80px;
+    }
+
+.title-img {
+    position: relative;/*relativeとabsoluteはセットで使う*/
+    width: 100%;
+    max-width: 900px;
+    /*画像サイズに合わせて調整*/
+    margin: 30px;
+    object-fit: cover;
+}
+
+.title-img p {
+    position: absolute;
+    margin: 0;
+    font-size: 40px;
+    color: black;
+
+    top: 50%;
+    /*上から50%,画像の左から10pxずらす*/
+    left: 10px;
+    color: #000;
+    /* 黒文字 */
+    text-shadow:
+        2px 2px 0 #fff,
+        /* 右下に白影 */
+        -2px -2px 0 #fff,
+        /* 左上 */
+        -2px 2px 0 #fff,
+        /* 左下 */
+        2px -2px 0 #fff;
+    /* 右上 */
+}
+
+
+
+.fixed-description-button {
+    bottom: 30px;
+    right: 30px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;/*パーセンテージが上がれば上がるほど丸くなる、一つ一つ左上、右上、右下左下でもつけられる*/
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 9999;/* 常に上に表示 */
+}
+
+.recruit_float_plus {
+    font-size: 30px;
+    color: black;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+
+
+.category-wrapper {
+    padding: 30px 0;
+    background-image: url("../img/pc05.jpg");
+    background-size: cover;
+    }
+
+    .category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px 30px;
+    margin: 30px auto;
+    max-width: 1000px;
+    gap: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: auto;
+    }
+
+    .category.reverse {
+    flex-direction: row-reverse;
+    }
+
+    .category-text {
+    flex: 1;
+    text-align: left;
+    }
+
+    .category-text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    }
+
+    .category-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    }
+
+    .img-frame {
+    flex: 1;
+    text-align: center;
+    }
+
+    .pc-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    }
+
+    /* ▼スマホ専用CSS（768px以下） */
+    @media screen and (max-width: 768px) {
+    .category {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    .category-text {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .category-text h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    .category-text p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .img-frame {
+        order: -1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .category.reverse .img-frame {
+        order: -1;
+    }
+
+    .pc-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    }
