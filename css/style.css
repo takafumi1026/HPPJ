@@ -1,0 +1,1131 @@
+/* ------------------------------
+  ベース設定
+------------------------------ */
+body, html {
+  margin: 0;            /* ブラウザがデフォルトで設定している余白（外側のスペース）をすべて取り除く */
+  padding: 0;           /* 要素内側の余白（内側のスペース）をすべて取り除く */
+  width: 100%;          /* 幅を画面の横幅いっぱい（100%）に設定。通常は不要だが、念のため明示的に指定している */
+  background-color: #F5F5F5; /* ページ全体の背景色を薄いグレー (#F5F5F5) に設定する */
+  overflow-x: hidden;   /* 横方向のスクロールバーを非表示にする（横スクロールを防止する） */
+}
+
+main {
+  margin: 0;            /* 要素の外側の余白をすべて0に設定（上下左右） */
+  padding: 0;           /* 要素の内側の余白をすべて0に設定（上下左右） */
+  width: 100%;          /* 親要素の幅に対して100%の幅を設定（全幅） */
+  max-width: none;      /* 幅の最大値を制限しない（デフォルトの制限を解除） */
+}
+
+
+/* ------------------------------
+  ヘッダー関連
+------------------------------ */
+.site-header {
+  background-color: #fff;      /* ヘッダーの背景色を白に設定 */
+  padding: 0px 0px;          /* 上下に20px、左右に40pxの内側余白を設定 */
+  border-bottom: 1px solid #ccc; /* 下部に1pxの薄いグレーの実線を引いて区切り線を作成 */
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+
+.header-inner {
+  display: flex; /* 子要素を横並びにするフレックスボックスレイアウトを適用 */
+  justify-content: space-between; /* 子要素同士の間にスペースを均等に配置（両端寄せ） */
+  align-items: center; /* 子要素を縦方向の中央に揃える */
+  max-width: 1100px; /* コンテナの最大幅を1200pxに制限 */
+  margin: 0 auto; /* 左右のマージンを自動にして中央寄せにする */
+}
+
+
+.logo-area .logo {
+  height: 100px;       /* ロゴの高さを50ピクセルに設定 */
+  width: 100%;        /* ロゴの幅を親要素の2.5倍に設定（拡大表示） */
+  display: block;           /* ブロック要素化して左寄せの制御をしやすく */
+}
+
+.logo-area {
+  margin-right: auto; /* ← フレックス内でロゴを左端に寄せる */
+}
+
+.logo {
+  height: 100px;
+  width: auto;         /* 画像本来の横幅を保持 */
+  display: block;      /* ブロック化して中央寄せを防止 */
+}
+
+
+
+.main-nav ul {
+  display: flex;         /* ナビゲーションリストを横並びに表示 */
+  gap: 30px;             /* 各リスト項目（li）の間に30pxの隙間を設定 */
+  list-style: none;      /* リストマーカー（●や番号）を非表示にする */
+  margin: 0;             /* 外側の余白をリセット */
+  padding: 0;            /* 内側の余白をリセット */
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+
+.mail-icon {
+width: 24px;            /* 横幅を24ピクセルに指定 */
+height: 24px;           /* 高さを24ピクセルに指定 */
+vertical-align: middle; /* インライン要素を垂直方向に中央揃え */
+
+}
+
+  /* ハンバーガーメニュー */
+/* デフォルト（PC版） */
+/* デフォルト（PC版） */
+.menu-toggle {
+  display: none; /* ハンバーガーは非表示 */
+}
+
+.main-nav {
+  display: block; /* PCでは常に表示 */
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 20px; /* 横並びの余白 */
+}
+
+/* スマホ版（768px以下） */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; font-size: 28px; background: none; border: none; cursor: pointer; z-index: 1001; }
+  .main-nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border-top: 1px solid #ccc; z-index: 1000; }
+  .main-nav.open { display: block; }
+  .main-nav ul { flex-direction: column; padding: 10px; gap: 10px; }
+  .main-nav li { border-bottom: 1px solid #eee; }
+  .main-nav a { display: block; padding: 10px; }
+}
+
+
+
+
+
+/* ------------------------------
+  トップ画像とテキスト（トップセクション）
+------------------------------ */
+.top-image-wrapper {
+  position: relative;   /* 親要素を基準にした位置指定が可能に */
+  width: 80%;
+  max-width: 1000px;    /* 横幅の最大値を1000ピクセルに制限 */
+  margin: 0 auto;
+  padding-top: 95px;
+}
+
+
+.top-image {
+  width: 75%;
+  max-width: 1000px;
+  height: auto;
+  display: block;          /* 要素をブロックレベルにして、中央寄せが可能に */
+  margin: 0 auto 40px;     /* 上0 / 左右中央 / 下40pxのマージン */
+  position: relative;
+  right: -15%;             /* 通常位置から右に15%ずらす（左に寄る） */
+}
+
+
+.top-text-stroke {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  z-index: 2;
+  width: 90%;
+  text-align: center;
+}
+
+.top-text-stroke p {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  line-height: 1.5;
+  text-shadow: -1px -2px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+@media (max-width: 768px) {
+  .top-image-wrapper { width: 100%; padding-top: 60px; }
+  .top-image { width: 100%; margin-bottom: 20px; right: 0; }
+  .top-text-stroke { position: static; width: 90%; margin: 0 auto 20px; text-align: center; bottom: 10%; }
+  .top-text-stroke p { font-size: 1.2rem; line-height: 1.4; }
+}
+
+
+/* ------------------------------
+  私たちについて（Aboutセクション）
+------------------------------ */
+.about-visual {
+  position: relative;               /* 子要素の絶対位置指定の基準にする */
+  overflow: hidden;                 /* はみ出した内容を非表示にする */
+  width: 100vw;                     /* ビューポートの幅と同じにする */
+  margin-left: calc(-50vw + 50%);   /* 中央寄せにするための左マージン調整 */
+  height: 150px;                    /* 高さを150pxに設定 */
+  display: flex;                    /* フレックスボックスレイアウトにする */
+  align-items: center;              /* 高さ方向で中央揃えにする */
+  padding-left: 150px;              /* 左に150pxの内側余白をとる */
+}
+
+
+.about-visual::before {
+  content: "";                             /* 擬似要素を表示するために必要 */
+  position: absolute;                      /* 親要素を基準に絶対配置 */
+  inset: 0;                                /* 四辺すべて0＝親と同じ大きさ */
+  background-image: url('../img/aboutus.png');  /* 背景画像を指定 */
+  background-size: cover;                  /* 要素全体を覆うように拡大縮小 */
+  background-position: center;            /* 画像を中央に配置 */
+  background-repeat: no-repeat;           /* 背景画像を繰り返さない */
+  opacity: 0.4;                            /* 背景画像を40%の濃さで表示（透過） */
+  z-index: 1;                              /* テキストより下or上になるよう調整 */
+}
+
+
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: black;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+
+  /* 疑似アウトライン（白いふちどり） */
+  text-shadow:
+    -1px -2px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+.about-content {
+  background-color: white;
+  margin: 20px auto;
+  padding: 10px;
+  width: 100%;
+  max-width: 1000px;
+  border: 2px solid #ffffff;
+  font-size: 22px;
+  line-height: 0.8;
+  z-index: 2;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  /* タイトル調整 */
+  .about-title {
+    font-size: 1.6rem;   /* 少し小さめに */
+    text-align: center;  /* 中央揃えを維持 */
+    margin: 20px 0 10px; /* 上下の余白調整 */
+  }
+
+  /* 内容調整 */
+  .about-content {
+    padding: 15px 20px;  /* 左右の余白を広めにして読みやすく */
+    font-size: 1rem;     /* スマホで読みやすい文字サイズ */
+    line-height: 1.6;    /* 行間を少し広げる */
+    max-width: 100%;     /* 幅制限を解除 */
+    margin: 0 auto 40px; /* 上下の余白調整 */
+  }
+}
+
+
+
+/* ------------------------------
+  各セクション（事業内容、社員紹介など共通）
+------------------------------ */
+.section h2 {
+  padding-left: 40px; /* お好みの値に調整可能（例：20〜60px程度） */
+}
+
+.section-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.section-title {
+  font-size: 1px;     /* ← h2 と同じサイズにする */
+  font-weight: bold;   /* h2 に近づけるなら太字も設定 */
+  margin: 20px;
+}
+
+
+.business-subtitle {
+  position: relative;
+  left: 20px; /* ← ここを好きなだけ増やせば右に寄せられる */
+  font-family: 'Homemade Apple', cursive;
+  font-size: 1.2rem;
+  color: #666;
+  white-space: nowrap;
+  padding-left: 40px; /* ← 内側の余白として右に寄せる */
+}
+
+
+.business-wrapper {
+  position: relative;
+  width: 80%;         /* 基本は画面の80%サイズ */
+  max-width: 900px;   /* PCでの最大幅 */
+  margin: 60px auto;
+}
+
+.business-image {
+  display: block;
+  width: 100%;        /* wrapper に合わせて縮小 */
+  border: 4px solid black;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.business-placeholder {
+  position: absolute;
+  top: 30px;          /* 少し下にズラす */
+  left: -30px;        /* 少し左にズラす */
+  width: 100%;        /* 画像と同じ幅 */
+  height: 100%;       /* 画像と同じ高さ */
+  background-color: #EB9A6E;
+  border: 4px solid black;
+  border-radius: 12px;
+  z-index: 0;
+}
+
+/* 📱 スマホでさらに小さくする */
+@media (max-width: 768px) {
+  .business-wrapper {
+    width: 95%;       /* PC版より小さく、画面幅にフィット */
+    margin: 30px auto;
+  }
+
+  .business-placeholder {
+    top: 15px;        /* 余白も縮小 */
+    left: -15px;
+  }
+}
+
+
+
+/* ------------------------------
+  employee-carousel セクション
+------------------------------ */
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.js-carousel {
+  overflow: hidden;
+}
+
+.gallery-cell {
+  display: flex;
+  flex-direction: column; /* 写真→テキストの縦並び */
+  align-items: center;     /* 中央寄せ */
+  justify-content: flex-start;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px; /* カード幅（必要に応じて調整） */
+  box-sizing: border-box;
+  margin-right: 20px; /* ← ここが肝心！カードの右に隙間を作る */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: -50px; /* 画面の左端に近づける */
+}
+
+.carousel-next {
+  right: -50px; /* 画面の右端に近づける */
+}
+
+.employee-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #000;
+  margin-bottom: 12px;
+}
+
+.employee-info {
+  text-align: left;
+  font-size: 0.9rem;
+  width: 100%;            /* テキストを写真と同じ幅に */
+}
+
+.employee-info p {
+  margin: 4px 0;
+}
+
+.employee-carousel {
+  margin-bottom: 80px; /* 下に80pxの隙間 */
+}
+
+/* 📱 スマホ用 */
+@media (max-width: 768px) {
+  .gallery-cell {
+    width: 90%;          /* 画面幅の 90% に広げる */
+    margin: 0 auto;      /* 中央寄せ */
+    margin-bottom: 20px; /* 下に隙間を追加（横スクロールしない場合） */
+  }
+
+  .employee-info {
+    font-size: 0.85rem;  /* 少し文字を小さめに */
+    line-height: 1.6;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    display: none; /* ← スマホではボタン非表示（スワイプ操作だけにする場合） */
+  }
+}
+
+
+
+
+/* ------------------------------
+  company セクション
+------------------------------ */
+.company-overview {
+  position: relative; /* ✅ 親に基準を作る */
+  background-image: url("../img/kaisyagaiyou_back.png");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  overflow: visible; /* はみ出し表示も許可 */
+}
+
+.overview-overlay {
+  position: absolute;
+  top: 0;
+  left: 60;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  z-index: 2;
+}
+
+.overview-title {
+  position: absolute;            /* 位置調整を有効にする */
+  top: 30px;                     /* 上からの距離。必要なら調整 */
+  left: 100px;                    /* ここを大きくすれば右にずれる */
+  font-size: 2.2rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+}
+
+.overview-overlay-img {
+  position: absolute;
+  top: 35%;
+  left: 60%; /* 中央よりやや右 */
+  transform: translate(-50%, -50%);
+  width: 700px; /* お好みで */
+  height: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 3;
+}
+
+.overview-menu {
+  position: absolute;
+  top: 65%; /* 表示位置の調整 */
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+  padding: 30px 120px;
+  border-radius: 12px;
+  z-index: 2; /* 背景より前、画像より後ろ */
+  text-align: center;
+}
+
+.overview-menu p {
+  color: white;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+/* SES風ボタン */
+.overview-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: orange;
+  color: white;
+  padding: 15px 20px;         /* ← 縦を短く、横を長く */
+  border-radius: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 10;
+  white-space: nowrap;       /* ✅ 折り返さない */
+  font-size: 1.2rem;
+}
+
+.overview-button .ses-text {
+  margin-right: 1%;
+}
+
+.overview-button .ses-icon {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+/* ===========================
+     会社概要セクション
+     =========================== */
+@media (max-width: 768px) {
+  .company-overview {
+    height: auto;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .company-overview .overview-overlay {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .company-overview .overview-title {
+    position: static;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  }
+
+  .company-overview .overview-menu {
+    position: static;
+    transform: none;
+    margin: 0 auto 20px;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .company-overview .overview-menu p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .company-overview .overview-overlay-img {
+    position: static;
+    transform: none;
+    width: 100%;          /* 幅いっぱい */
+    max-width: 400px;     /* 任意で最大幅 */
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .company-overview .overview-button {
+    position: relative;
+    display: inline-flex;  /* 横並びにテキスト＋アイコン */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    padding: 10px 20px;   /* 縦長さ控えめ */
+    font-size: 1rem;
+    border-radius: 25px;
+    background-color: orange;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .company-overview .ses-icon {
+    margin-left: 8px;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    background-color: black;
+    color: #fff;
+  }
+}
+
+
+
+/* ------------------------------
+  採用＋アクセス背景画 セクション
+------------------------------ */
+.under-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.under-background {
+  position: relative;
+  background-image: url('../img/under_back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 230vh; /* 画面縦3つ分 */
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 2;
+}
+
+.content-wrapper {
+  position: relative; /* オーバーレイより上に表示 */
+  z-index: 3;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: rgb(0, 0, 0);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  /* 左上に寄せる場合はtext-align: left; */
+  text-align: left;
+}
+
+/* CSS */
+.recruit-image-wrapper {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  display: inline-block; /* サイズを画像に合わせる */
+}
+
+
+
+
+.recruit-image {
+  max-width: 75%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.recruit-button {
+  position: absolute;
+  bottom: 80px;
+  right: 200px;
+  background-color: orange;
+  color: white;
+  padding: 24px 30px;           /* 横長・縦短く */
+  border-radius: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 10;
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+.recruit-button .recruit-text {
+  margin-right: 10px;
+}
+
+.recruit-button .recruit-icon {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-weight: bold;
+}
+
+
+.positions {
+  position: absolute;
+  top: 40%; /* recruit-image の中央 */
+  left: 50%;
+  transform: translate(-50%, -60%); /* 中央より少し上に調整 */
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 80px;
+}
+
+.position {
+  background-color: #fff;
+  padding: 24px 48px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem; /* ← ここで文字の大きさを指定 */
+}
+
+
+.access-section {
+  padding: 60px 20px;
+  background: transparent; /* 背景は透過前提、親の背景を活かす */
+}
+
+.access-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.access-title {
+  text-align: left;    /* 左寄せ */
+  color: #000000;         /* 背景が濃いなら文字は白に */
+  font-size: 2rem;
+  margin-bottom: 16px; /* 少し下に余白 */
+  }
+
+.access-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.access-info {
+  flex: 1;
+  min-width: 280px;
+  margin-top: 60px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #000000;
+}
+
+.access-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #000000;
+}
+
+.access-map {
+  flex: 1.5;
+  min-width: 300px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ===== スマホ版レイアウト修正版 ===== */
+/* ===========================
+     採用情報セクション
+     =========================== */
+/* 採用情報セクション（スマホ表示用） */
+@media (max-width: 768px) {
+  .recruit-image {
+    width: 100vw;        /* 画面幅いっぱい */
+    height: auto;        /* 縦横比を保持 */
+    display: block;
+    margin: 0;           /* 左右余白なし */
+    border-radius: 0;    /* 角丸を消す（必要なら残す） */
+    object-fit: cover;   /* 切り取りでもいい感じにフィット */
+  }
+
+    /* 親の wrapper の余白を打ち消す */
+  .recruit-image-wrapper {
+    width: 132vw;
+    margin: 0 calc(-1 * (100vw - 100%)/2); /* ビューポート基準で中央 */
+    padding: 0;
+  }
+}
+
+  /* 背景画像を枠いっぱいに表示 */
+.recruit-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px; /* 枠を丸めたいなら残す */
+}
+
+
+  /* グレー枠を画像中央に配置 */
+.positions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -50%); /* 完全に中央配置 */
+  width: 85%;
+  max-width: 360px;
+  background: rgba(40, 40, 40, 0.8); /* 透けグレーで文字を読みやすく */
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.position {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+
+  /* 職種リスト（もっと小さく） */
+  .positions .position {
+    width: 100%;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 8px 0;
+    border-radius: 6px;
+  }
+
+  .recruit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px auto 0; /* 上だけ余白をつけて中央寄せ */
+  padding: 10px 20px;
+  background: #E58208;
+  color: #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+
+  .recruit-button .recruit-icon {
+    margin-left: 5px;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    background-color: black;
+    color: #fff;
+  }
+
+
+/* ===== より小さい画面用（420px以下） ===== */
+@media (max-width: 420px) {
+  .positions { width: 90%; padding: 18px; }
+  .positions .position { font-size: 0.95rem; }
+  .positions .recruit-button { padding: 9px 14px; font-size: 0.95rem; }
+}
+
+
+
+
+
+
+
+
+/* ------------------------------
+  その他（about-bg など）
+------------------------------ */
+.site-footer {
+  margin-top: 80px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ロゴ中央配置 */
+.footer-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* 白背景に黒文字リンク */
+.footer-links {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.footer-links a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #666;
+}
+
+/* 下部黒背景に白文字 */.footer-bottom {
+  background-color: #111111;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.footer-bottom-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-inline a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-bottom-inline a:hover {
+  text-decoration: underline;
+}
+
+
+.fixed-recruit-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.circle {
+  background-color: #E58208 !important;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+
+.plus {
+  color: black;           /* ←黒い＋ */
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 4px;     /* 少し上に配置 */
+  line-height: 1;
+}
+
+.label {
+  color: white;           /* ←白文字「採用情報」 */
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0px;        /* 少し下に寄せる */
+}
+
+
+
+/* ボタンの共通スタイル */
+.ses-button {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #E58208;
+  color: #fff;
+  padding: 24px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+  z-index: 5;
+  transition: background-color 0.3s ease;
+}
+
+/* 黒丸で囲まれた矢印 */
+.ses-icon {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ホバー効果（任意） */
+.ses-button:hover {
+  background-color: #ff9900;
+}
+
+/* ボタンを重ねるための親要素に relative をつけておく */
+.business-wrapper {
+  position: relative;
+}
+
+/* SES事業ボタン用デザイン（再利用可能） */
+.ses-button {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  background-color: orange;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 5;
+  transition: background-color 0.3s ease;
+}
+
+.ses-icon {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.ses-button:hover {
+  background-color: #ff9900;
+}
+.overview-overlay {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+
+  .access-container {
+    flex-direction: column;      /* 縦並びに変更 */
+    align-items: center;         /* 中央寄せ */
+    gap: 20px;                   /* 上下の余白 */
+    padding: 0 10px;             /* 左右に少し余白 */
+  }
+
+  .access-info {
+    flex: none;                  /* 幅固定解除 */
+    width: 100%;                 /* 画面幅いっぱい */
+    max-width: 400px;            /* 任意の最大幅 */
+    text-align: center;           /* 中央揃え */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;             /* 読みやすいサイズ */
+    line-height: 1.5;
+  }
+
+  .access-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .access-map {
+    flex: none;                  /* 幅固定解除 */
+    width: 100%;                 /* 画面幅いっぱい */
+    max-width: 400px;            /* 任意の最大幅 */
+    height: 300px;               /* 高さ調整 */
+    border-radius: 12px;         /* 角丸 */
+    overflow: hidden;            /* はみ出し防止 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .access-map iframe {
+    width: 100%;                 /* 親幅にフィット */
+    height: 100%;                /* 親高さにフィット */
+    border: 0;
+  }
+}
+@media (max-width: 768px) {
+  .overlay {
+    position: absolute; /* absoluteのままでもOK */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;       /* 高さを自動に */
+    min-height: 100%;   /* 必要に応じて最低高さを確保 */
+  }
+
+  .under-background {
+    height: auto;       /* 画面内容に合わせる */
+    padding-bottom: 20px; /* 下に少し余白を追加してゆとりを */
+  }
+}
+
+@media (max-width: 768px) {
+  /* フッターロゴは中央揃えのまま少し小さめ */
+  .footer-logo img {
+    width: 100px;
+  }
+
+  /* リンクを縦並びに */
+  .footer-links {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .footer-links a {
+    font-size: 1rem;
+  }
+
+  /* コピーライト部分も縦並び */
+  .footer-bottom-inline {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+

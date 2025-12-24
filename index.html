@@ -1,17 +1,268 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>チームホームページ</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeCraft Partners</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="" />
 </head>
+
 <body>
-  <h1>チームのホームページへようこそ！</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">ホーム</a></li>
-      <!-- ここに後でみんなのページを追加 -->
-    </ul>
-  </nav>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <img src="../img/Logo.jpg" alt="CodeCraft Partners ロゴ" class="logo" />
+    </div>
+
+    <!-- スマホだけ出るハンバーガー -->
+    <button class="menu-toggle">☰</button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="ses.html">事業内容</a></li>
+        <li><a href="introduce.html">社員紹介</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li>
+          <a href="contact.html">
+            <img src="../img/mail-icon-placeholder.png" alt="お問い合わせ" class="mail-icon" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <div class="top-image-wrapper">
+      <img src="../img/TOPopTOP.jpg" alt="TOP画像" class="top-image" />
+      <div class="top-text-stroke">
+        <p>
+          ｢人の数だけ、キャリアをつくる<br>
+          わたしたちだからこそ<br>
+          出来ることがある。｣
+        </p>
+      </div>
+    </div>
+
+    <div class="about-visual">
+      <h2 class="about-title">私たちについて</h2>
+    </div>
+
+    <section class="about-section">
+      <div class="about-content">
+        <p>CodeCraft Partners株式会社は、Web系システム開発に特化したSES企業です。</p>
+        <p>お客様のビジネス課題に対してエンジニアの個人の得意分野を活かすために、</p>
+        <p>高い技術を備えた精鋭のエンジニアチームを育てます。</p>
+        <p>私たちは「新たな技術に挑戦したい」「やってみたい！」という気持ちを全力でサポートします。</p>
+        <p>頼れる先輩エンジニアが多数在籍！一緒にスキルアップしながら、あなたの成長を応援します！</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>事業内容 <span class="business-subtitle">Business content</span></h2>
+      <div class="business-wrapper">
+        <div class="business-placeholder"></div>
+        <img src="../img/TOPSES事業.jpg" alt="事業内容画像" class="business-image" />
+        <a href="ses.html" class="ses-button">
+          <span class="ses-text">SES事業へ</span>
+          <span class="ses-icon">＞</span>
+        </a>
+      </div>
+    </section>
+
+<section class="section">
+  <div class="section-title-wrapper">
+    <div class="section-title">社員紹介</div>
+    <span class="business-subtitle">Staff Introduce</span>
+  </div>
+</section>
+  
+    <section class="employee-carousel">
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev">◀</button>
+
+        <div class="carousel js-carousel">
+<div class="gallery-cell">
+        <img src="../img/member-a.jpg" alt="社員Aの写真" class="employee-photo">
+        <div class="employee-info">
+          <p><strong>事業内容:</strong> Web開発</p>
+          <p><strong>名前:</strong> 山田 太郎</p>
+          <p><strong>経験年数:</strong> 1年</p>
+          <p><strong>保有しているIT資格:</strong> 基本情報技術者</p>
+          <p><strong>会社を知ったきっかけ:</strong> 就職イベント</p>
+          <p><strong>入社を決めた理由:</strong> 若手が活躍できる社風</p>
+          <p><strong>入社後の印象:</strong> 風通しの良い環境</p>
+          <p><strong>会社の魅力:</strong> 成長を後押しする制度</p>
+          <p><strong>仕事をする上でのアドバイス:</strong> チャレンジを恐れずに</p>
+        </div>
+      </div>
+
+      <div class="gallery-cell">
+        <img src="../img/member-a.jpg" alt="社員Bの写真" class="employee-photo">
+        <div class="employee-info">
+          <p><strong>事業内容:</strong> Web開発</p>
+          <p><strong>名前:</strong> 山田 次郎</p>
+          <p><strong>経験年数:</strong> 2年</p>
+          <p><strong>保有しているIT資格:</strong> 基本情報技術者</p>
+          <p><strong>会社を知ったきっかけ:</strong> 就職イベント</p>
+          <p><strong>入社を決めた理由:</strong> 若手が活躍できる社風</p>
+          <p><strong>入社後の印象:</strong> 風通しの良い環境</p>
+          <p><strong>会社の魅力:</strong> 成長を後押しする制度</p>
+          <p><strong>仕事をする上でのアドバイス:</strong> チャレンジを恐れずに</p>
+        </div>
+      </div>
+
+      <div class="gallery-cell">
+        <img src="../img/member-a.jpg" alt="社員Cの写真" class="employee-photo">
+        <div class="employee-info">
+          <p><strong>事業内容:</strong> Web開発</p>
+          <p><strong>名前:</strong> 山田 三郎</p>
+          <p><strong>経験年数:</strong> 3年</p>
+          <p><strong>保有しているIT資格:</strong> 基本情報技術者</p>
+          <p><strong>会社を知ったきっかけ:</strong> 就職イベント</p>
+          <p><strong>入社を決めた理由:</strong> 若手が活躍できる社風</p>
+          <p><strong>入社後の印象:</strong> 風通しの良い環境</p>
+          <p><strong>会社の魅力:</strong> 成長を後押しする制度</p>
+          <p><strong>仕事をする上でのアドバイス:</strong> チャレンジを恐れずに</p>
+        </div>
+      </div>
+
+      <div class="gallery-cell">
+        <img src="../img/member-a.jpg" alt="社員Dの写真" class="employee-photo">
+        <div class="employee-info">
+          <p><strong>事業内容:</strong> Web開発</p>
+          <p><strong>名前:</strong> 山田 四郎</p>
+          <p><strong>経験年数:</strong> 4年</p>
+          <p><strong>保有しているIT資格:</strong> 基本情報技術者</p>
+          <p><strong>会社を知ったきっかけ:</strong> 就職イベント</p>
+          <p><strong>入社を決めた理由:</strong> 若手が活躍できる社風</p>
+          <p><strong>入社後の印象:</strong> 風通しの良い環境</p>
+          <p><strong>会社の魅力:</strong> 成長を後押しする制度</p>
+          <p><strong>仕事をする上でのアドバイス:</strong> チャレンジを恐れずに</p>
+        </div>
+      </div>
+
+      <div class="gallery-cell">
+        <img src="../img/member-a.jpg" alt="社員Eの写真" class="employee-photo">
+        <div class="employee-info">
+          <p><strong>事業内容:</strong> Web開発</p>
+          <p><strong>名前:</strong> 山田 五郎</p>
+          <p><strong>経験年数:</strong> 5年</p>
+          <p><strong>保有しているIT資格:</strong> 基本情報技術者</p>
+          <p><strong>会社を知ったきっかけ:</strong> 就職イベント</p>
+          <p><strong>入社を決めた理由:</strong> 若手が活躍できる社風</p>
+          <p><strong>入社後の印象:</strong> 風通しの良い環境</p>
+          <p><strong>会社の魅力:</strong> 成長を後押しする制度</p>
+          <p><strong>仕事をする上でのアドバイス:</strong> チャレンジを恐れずに</p>
+        </div>
+      </div>
+        </div>
+
+        <button class="carousel-btn carousel-next">▶</button>
+      </div>
+    </section>
+
+    <section class="company-overview">
+      <div class="overview-overlay">
+        <h2 class="overview-title">会社概要</h2>
+        <div class="overview-menu">
+          <p>代表挨拶</p>
+          <p>会社概要</p>
+          <p>沿革</p>
+          <p>アクセス</p>
+        </div>
+        <img src="../img/kaisyagaiyou.jpg" alt="会社概要画像" class="overview-overlay-img">
+      </div>
+      <a href="kaisha.html" class="overview-button">
+        <span class="ses-text">会社情報へ</span>
+        <span class="ses-icon">＞</span>
+      </a>
+    </section>
+
+    <section class="under-background">
+  <div class="overlay"></div>
+
+  <div class="content-wrapper">
+    <!-- 採用情報 -->
+    <section class="recruitment">
+  <h2 class="section-title">採用情報</h2>
+
+  <div class="recruit-image-wrapper">
+    <img src="../img/TOP採用情報.jpg" alt="採用情報画像" class="recruit-image" />
+
+    <div class="positions">
+      <div class="position">・フロントエンジニア</div>
+      <div class="position">・バックエンドエンジニア</div>
+      <div class="position">・WEBデザイナー</div>
+      <div class="position">・フルスタック</div>
+
+      <a href="募集要項ページ.html" class="recruit-button">
+        <span class="recruit-text">募集要項へ</span>
+        <span class="recruit-icon">＞</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+        <!-- アクセス情報 -->
+        <section class="access-section">
+          <div class="access-container">
+            <div class="access-info">
+              <h3>CodeCraft Partners 株式会社</h3>
+              <p>〒102-0093</p>
+              <p>東京都千代田区平河町2-7-2 3F</p>
+              <p>TEL: 03-6272-3215</p>
+            </div>
+            <div class="access-map">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.9610136197059!2d139.7397444107544!3d35.6791063876684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d743b5de9bb%3A0x2596cd8e8f9c35dd!2sYIG%20solution%20%E3%88%B1!5e1!3m2!1sja!2sjp!4v1749725289467!5m2!1sja!2sjp" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <img src="../img/Logo.jpg" alt="CodeCraft Partners ロゴ" class="logo" />
+    </div>
+
+    <div class="footer-links">
+      <a href="#top">TOP</a>
+      <a href="#business">事業内容</a>
+      <a href="#members">社員紹介</a>
+      <a href="#overview">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-inline">
+        <span>© 2025 CodeCraft Partners. All rights reserved.</span>
+        <a href="#privacy">個人情報保護方針</a>
+        <a href="#policy">サイトポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#recruit" class="fixed-recruit-button">
+    <div class="circle">
+      <span class="plus">＋</span>
+      <div class="label">採用情報</div>
+    </div>
+  </a>
+
+  <script src="../javascript/script.js"></script>
 </body>
 </html>
